@@ -1,0 +1,11 @@
+{% extends "upload/base.html" %}
+
+{% block title %}アップローダサンプル{% endblock title %}
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        api-key<input type="text" size="46" name="api-key"><br>
+        <input type="file" name="file">
+        <input type="submit" value="アップロード">
+    </form>
+{% endblock content %}
