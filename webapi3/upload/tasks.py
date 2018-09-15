@@ -24,9 +24,9 @@ def voice(file_path, apikey):
     print(response)
     anger_num=response['anger']*(255//50)
     print(anger_num)
-    print(hex(anger_num))
+    print(format(anger_num, 'x'))
     while True:
-        if subprocess.check_call(["gatttool","-b","24:0A:C4:07:84:3E","--char-write-req","-a","0x002a","-n", hex(anger_num)]) == 0:
+        if subprocess.check_call(["gatttool","-b","24:0A:C4:07:84:3E","--char-write-req","-a","0x002a","-n", format(anger_num, 'x')]) == 0:
             break
 
     print(response)
