@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from upload.models import FileNameModel
 import os
 import threading
-from tasks import voice
+from tasks import voice_rgb
 
 UPLOADE_DIR = os.path.dirname(os.path.abspath(__file__)) + '/static/files/'
 TARGET_FILE = ''
