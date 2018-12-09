@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from upload.models import FileNameModel
 import os
 import threading
-from tasks import voice
+from tasks import voice_rgb
 
 UPLOADE_DIR = os.path.dirname(os.path.abspath(__file__)) + '/static/files/'
 TARGET_FILE = ''
@@ -31,7 +31,7 @@ def form(request):
 
     # ファイルアップロード後、Empathにファイルを送信し、結果を受け取る
     print("upload done.")
-    t = threading.Thread(target=voice, args=(path, apikey, ))
+    t = threading.Thread(target=voice_rgb, args=(path, apikey, ))
     t.start()
 
     return HttpResponse(status=200)
