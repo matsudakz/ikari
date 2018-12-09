@@ -48,8 +48,6 @@ def voice_rgb(file_path, apikey):
     while True:
         if subprocess.check_call(["gatttool","-b","24:0A:C4:07:84:3E","--char-write-req","-a","0x002a","-n", format(rgb, 'x')]) == 0:
             break
-    if response["error"] > 0:
-        print(response["error"])
 
 def voice(file_path, apikey):
     time.sleep(SLEEP_TIME)
@@ -76,5 +74,3 @@ def voice(file_path, apikey):
     while True:
         if subprocess.check_call(["gatttool","-b","24:0A:C4:07:84:3E","--char-write-req","-a","0x002a","-n", format(anger_num, 'x')]) == 0:
             break
-    if response["error"] > 0:
-        print(response["error"])
