@@ -28,7 +28,7 @@ python manage.py migrate
 cd /home/pi/PycharmProjects/ikari/webapi3/webapi3
 viで以下を修正
 vi settings.py
-     28 ALLOWED_HOSTS = ['受け付けるIPアドレスを入れる']
+28 ALLOWED_HOSTS = ['受け付けるIPアドレスを入れる']
 
 8.Webサーバー起動
 cd /home/pi/PycharmProjects/ikari/webapi3
