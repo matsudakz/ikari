@@ -39,8 +39,14 @@ def voice_rgb(file_path, apikey):
         rgb=int('ffffff', 16)
     else:
         red=(response['anger']+response['energy']/2)*(MAX_RANGE//50)
+        if red > 255:
+            red = 255
         green=(response['joy']+response['energy']/2)*(MAX_RANGE//50)
+        if green > 255:
+            green = 255
         blue=(response['sorrow']+response['energy']/2)*(MAX_RANGE//50)
+        if blue > 255:
+            blue = 255
         rgb=(red<<16)+(green<<8)+blue
 
     print("rgb=", rgb)
